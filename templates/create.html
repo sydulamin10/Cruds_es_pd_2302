@@ -1,0 +1,80 @@
+{% extends 'index.html' %}
+{% block title %}Profile Create{% endblock %}
+{% block search %}
+{% endblock %}
+
+{% block body %}
+<div class="container">
+    <form method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        <div class="form-group">
+            <label for="image">Choose an image:</label>
+            <input type="file" name="image" id="image">
+        </div>
+        <div class="form-group">
+            <label>Name : </label>
+            <br>
+            <input type="text" class="form-control" aria-describedby="emailHelp"
+                   placeholder="Enter Name" name="name">
+        </div>
+        <div class="form-group">
+            <label>Email address : </label>
+            <br>
+            <input type="email" class="form-control" aria-describedby="emailHelp"
+                   placeholder="Enter email" name="email">
+        </div>
+        <div class="form-group">
+            <label>address : </label>
+            <br>
+            <input type="text" class="form-control" aria-describedby="emailHelp"
+                   placeholder="Enter address" name="address">
+        </div>
+        <div class="form-group">
+            <label>number : </label>
+            <br>
+            <input type="text" class="form-control" aria-describedby="emailHelp"
+                   placeholder="Enter number" name="number">
+        </div>
+        <div class="form-group">
+            <label>age : </label>
+            <br>
+            <input type="number" class="form-control" aria-describedby="emailHelp"
+                   placeholder="Enter age" name="age">
+        </div>
+        <div class="form-group">
+            <label>gender : </label>
+            <br>
+            <select name="gender">
+                <option value="Male">Male</option>
+                <option value="Female">Female</option>
+                <option value="Others">Others</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label>religion : </label>
+            <br>
+            <select name="religion">
+                <option value="Islam">Islam</option>
+                <option value="Hindu">Hindu</option>
+                <option value="Bodho">Bodho</option>
+                <option value="Kristian">Kristian</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label>division : </label>
+            <br>
+            <input type="text" class="form-control" aria-describedby="emailHelp"
+                   placeholder="Enter division" name="division">
+        </div>
+        <div class="form-group">
+            <label>post_code : </label>
+            <br>
+            <input type="number" class="form-control" aria-describedby="emailHelp"
+                   placeholder="Enter post_code" name="post_code">
+        </div>
+        <br>
+        <br>
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+</div>
+{% endblock %}

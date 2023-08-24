@@ -1,0 +1,83 @@
+{% extends 'index.html' %}
+{% block title %}Profile Update{% endblock %}
+{% block search %}
+{% endblock %}
+
+{% block body %}
+<div class="container">
+    <form method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        <div class="form-group">
+            <img style="width:150px;height:150px;" src="{{update_prof.image.url}}" alt="">
+            <label for="image">Choose an image:</label>
+            <input type="file" name="image" id="image">
+        </div>
+        <div class="form-group">
+            <label>Name : </label>
+            <br>
+            <input type="text" class="form-control" aria-describedby="emailHelp"
+                   placeholder="Enter Name" value="{{update_prof.name}}" name="name">
+        </div>
+        <div class="form-group">
+            <label>Email address : </label>
+            <br>
+            <input type="email" class="form-control" aria-describedby="emailHelp"
+                   placeholder="Enter email" value="{{update_prof.email}}" name="email">
+        </div>
+        <div class="form-group">
+            <label>address : </label>
+            <br>
+            <input type="text" class="form-control" aria-describedby="emailHelp"
+                   placeholder="Enter address" value="{{update_prof.address}}" name="address">
+        </div>
+        <div class="form-group">
+            <label>number : </label>
+            <br>
+            <input type="text" class="form-control" aria-describedby="emailHelp"
+                   placeholder="Enter number" value="{{update_prof.number}}" name="number">
+        </div>
+        <div class="form-group">
+            <label>age : </label>
+            <br>
+            <input type="number" class="form-control" aria-describedby="emailHelp"
+                   placeholder="Enter age" value="{{update_prof.age}}" name="age">
+        </div>
+        <div class="form-group">
+            <label>gender : </label>
+            <br>
+            <select name="gender">
+                <option value="{{update_prof.gender}}">{{update_prof.gender}}</option>
+                <option value="Male">Male</option>
+                <option value="Female">Female</option>
+                <option value="Others">Others</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label>religion : </label>
+            <br>
+            <select name="religion">
+                <option value="{{update_prof.religion}}">{{update_prof.religion}}</option>
+                <option value="Islam">Islam</option>
+                <option value="Hindu">Hindu</option>
+                <option value="Bodho">Bodho</option>
+                <option value="Kristian">Kristian</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label>division : </label>
+            <br>
+            <input type="text" class="form-control" aria-describedby="emailHelp"
+                   placeholder="Enter division" value="{{update_prof.division}}" name="division">
+        </div>
+        <div class="form-group">
+            <label>post_code : </label>
+            <br>
+            <input type="number" class="form-control" aria-describedby="emailHelp"
+                   placeholder="Enter post_code" value="{{update_prof.post_code}}" name="post_code">
+        </div>
+        <br>
+        <br>
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+</div>
+{% endblock %}
